@@ -1,0 +1,96 @@
+/**DARK MODE STYLE**/
+
+html[data-theme='dark']{
+    --bg: #333333;
+    --bg-panel: #434343;
+    --color-headings: #3694FF;
+    --color-text: #B5B5B5;
+}
+html{
+    --bg: #FCFCFC;
+    --bg-panel: #EBEBEB;
+    --color-headings: #0077FF;
+    --color-text: #333333;
+}
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+/**DARK MODE STYLE **/
+
+body{
+    background-color: var(--bg);
+}
+
+.box{
+    margin: 10% auto;
+    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+    background-color: var(--bg-panel);
+}
+.nameSwitchToggle{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.nameSwitchToggle > p{
+    margin-top: 0;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: #0077FF;
+}
+.texts{
+    padding: 2rem;
+    font-family: system-ui;
+    color: var(--color-text);
+}
+
+/**SWITCH TOGGLE STYLE**/
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 60px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background:  #0077FF;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 130px;
+}
